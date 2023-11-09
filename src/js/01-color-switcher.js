@@ -7,7 +7,7 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
+let timerColor;
 startBtn.addEventListener('click', () => {
   timerColor = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
