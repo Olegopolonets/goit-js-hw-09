@@ -1,0 +1,2 @@
+for(var _loop=function(e){images[e].addEventListener("mouseover",(function(){for(var s=0;s<images.length;s++)images[s].classList.add("passiveimage");images[e].classList.remove("passiveimage"),images[e].addEventListener("mouseout",(function(){for(var e=0;e<images.length;e++)images[e].classList.remove("passiveimage")}))}))},images=document.getElementsByClassName("card-item"),i=0;i<=images.length-1;i++)_loop(i);
+//# sourceMappingURL=index.afc79c59.js.map
