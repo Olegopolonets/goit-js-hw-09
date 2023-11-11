@@ -1,7 +1,9 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const form = document.querySelector('.form');
-const submitBtn = form.querySelector('[type="submit"]');
+const randomBtn = form.querySelector('[type="button"]');
+const backdrop = document.querySelector('.backdrop');
+const iconClose = backdrop.querySelector('.icon-close');
 
 function onSubmitForm(event) {
   event.preventDefault();
@@ -18,11 +20,10 @@ function onSubmitForm(event) {
     // console.log(` Fulfilled promise ${count} in ${newDelay}ms`);
     createPromise(i, delayInputValue)
       .then(({ position, delay }) => {
-        console.log(`✅ Fulfilled promise ${position + 1} in ${delay}ms`);
-        Notify.success(`✅ Fulfilled promise ${position + 1} in ${delay}ms`);
+        Notify.success(`✅ Yee-haw! Fulfilled promise ${position + 1} in ${delay}ms`);
       })
       .catch(({ position, delay }) => {
-        Notify.failure(`❌ Fulfilled promise ${position + 1} in ${delay}ms`);
+        Notify.failure(`❌ Oops!… Fulfilled promise ${position + 1} in ${delay}ms`);
       });
     delayInputValue += stepInputValue;
   }
@@ -49,8 +50,40 @@ function createPromise(position, delay) {
 }
 
 form.addEventListener('submit', onSubmitForm);
-// const buttonBtn = form.querySelector('[type=""button"]');
-// buttonBtn.addEventListener('submit', () => {
-//   console.log('1');
-//   Notify.success(`✅ Fulfilled promise ${position + 1} in ${delay}ms`);
-// });
+
+const amount = form.querySelector('[name="amount"]');
+const step = form.querySelector('[name="step"]');
+const delay = form.querySelector('[name="delay"]');
+
+function isNegative(event) {
+  if (Number(event.target.value) < 0) {
+    Notify.warning("Marty McFly's, we can't go back in time!");
+    event.target.value = '';
+  }
+}
+amount.addEventListener('change', isNegative);
+step.addEventListener('change', isNegative);
+delay.addEventListener('change', isNegative);
+
+let countClickReset = 0;
+
+randomBtn.addEventListener('click', () => {
+  delay.value = Math.floor(Math.random() * 10 + 1) * 1000;
+  step.value = Math.floor(Math.random() * 10 + 1) * 100;
+  amount.value = Math.floor(Math.random() * 10) + 1;
+  countClickReset += 1;
+  if (countClickReset % 2 === 0) {
+    console.log(countClickReset);
+    modalPay();
+  }
+});
+function modalPay() {
+  backdrop.classList.add('is-open');
+}
+
+backdrop.addEventListener('click', event => {
+  const target = event.target;
+  if (target.classList.contains('backdrop') || target.closest('.icon-close')) {
+    backdrop.classList.remove('is-open');
+  }
+});
