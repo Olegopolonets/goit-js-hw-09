@@ -51,6 +51,8 @@ function startTimer() {
     const sumDateSeconds = Object.values(currentTime).reduce((a, b) => a + b, 0);
     if (sumDateSeconds < 0) {
       clearInterval(timerInterval);
+      Notify.success('Please choose a date in the future');
+
       return;
     }
 
