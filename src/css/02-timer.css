@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  background-image: url(https://free4kwallpapers.com/uploads/originals/2020/08/07/collected-from-internet.-wallpaper_.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Pacifico', cursive;
+}
+.go-back {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.go-back a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.go-back a:hover {
+  color: wheat;
+}
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#datetime-picker {
+  width: 300px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 20px;
+  background-color: transparent;
+  outline: transparent;
+  border-color: lightblue;
+  padding-left: 40px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  font-family: 'Pacifico', cursive;
+}
+
+.start-btn {
+  width: 150px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 20px;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Pacifico', cursive;
+  transition: all 0.3s linear;
+}
+
+.start-btn:hover {
+  background-color: rgb(94, 121, 139);
+  color: rgb(255, 255, 255);
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 40px;
+}
+
+.value {
+  font-size: 100px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.label {
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.container {
+  position: absolute;
+  width: 50%;
+  z-index: -1;
+}
+
+.stop-fireworks {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
