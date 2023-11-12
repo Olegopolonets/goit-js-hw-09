@@ -163,7 +163,7 @@ input[type='number']::-webkit-inner-spin-button {
   top: 20px;
   right: 15px;
   fill: black;
-  z-index: 3;
+  z-index: 9;
   padding: 5px;
   cursor: pointer;
 }
@@ -181,12 +181,14 @@ input[type='number']::-webkit-inner-spin-button {
 .modal-left {
   min-width: 50%;
 }
-.modal-title {
+.modal-left-title {
+  margin: 0;
+  line-height: 2.8;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #a16e58;
   text-align: center;
-  font-size: 25px;
-  color: black;
-  z-index: 2;
-  margin-bottom: 30px;
 }
 
 .modal-quote {
@@ -207,6 +209,57 @@ input[type='number']::-webkit-inner-spin-button {
 
 .modal-right {
   min-width: 50%;
+}
+
+.modal-right-title {
+  margin: 0;
+  line-height: 2.8;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #594b45;
+  text-align: center;
+}
+
+.credit-card {
+  width: 280px;
+  height: 160px;
+  padding: 10px;
+  padding-top: 50px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+  overflow: hidden;
+  z-index: 5;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 15px 24px rgba(37, 44, 65, 0.32);
+  box-shadow: 0 15px 24px rgba(37, 44, 65, 0.32);
+}
+
+.mastercard-img {
+  background: url('../images/mastercard-logo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 60px;
+  width: 60px;
+  z-index: 5;
+}
+
+.card-text-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text-bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
 }
 
 .form-details {
