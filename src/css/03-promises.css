@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(https://img.goodfon.ru/original/1920x1080/4/a7/cherry-blossom-tree-on-cliff-digital-wallpaper-cherry-blosso.jpg);
+  background-image: url('../images/task-3-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -219,7 +219,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 .field {
   height: 45px;
-  width: 100%;
+  width: 200px;
   margin-top: 16px;
   padding: 2px 10px;
   margin-bottom: 2px;
@@ -233,7 +233,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 .details-wrapper {
   display: flex;
-  justify-content: space-between;
+  gap: 25px;
   margin-bottom: 20px;
 }
 .details-wrapper .field {
