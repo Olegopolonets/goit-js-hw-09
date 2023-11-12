@@ -11,13 +11,7 @@ function onSubmitForm(event) {
   const stepInputValue = Number(event.target.elements.step.value);
   let delayInputValue = Number(event.target.elements.delay.value);
 
-  // console.log(amountInputValue, stepInputValue, delayInputValue);
-
-  //let count = 0;
   for (let i = 0; i < amountInputValue; i++) {
-    // count++;
-    // const newDelay = delayInputValue + i * stepInputValue;
-    // console.log(` Fulfilled promise ${count} in ${newDelay}ms`);
     createPromise(i, delayInputValue)
       .then(({ position, delay }) => {
         Notify.success(`✅ Yee-haw! Fulfilled promise ${position + 1} in ${delay}ms`);
@@ -72,18 +66,49 @@ randomBtn.addEventListener('click', () => {
   step.value = Math.floor(Math.random() * 10 + 1) * 100;
   amount.value = Math.floor(Math.random() * 10) + 1;
   countClickReset += 1;
-  if (countClickReset % 2 === 0) {
-    console.log(countClickReset);
+  if (countClickReset % 5 === 0) {
     modalPay();
   }
 });
+
 function modalPay() {
   backdrop.classList.add('is-open');
 }
 
+const modalRight = document.querySelector('.modal-right');
+
+const formPay = modalRight.querySelector('.js-form-pay');
+const numberCardInput = modalRight.querySelector('#person-number');
+const expyresMonthInput = modalRight.querySelector('#expyres-month');
+const creditExpyresYearInput = modalRight.querySelector('#input-credit-expyres-year');
+const cardCvcInput = modalRight.querySelector('#card-cvc');
+
+const cardDecorNumber = modalRight.querySelector('.js-card-decor-number');
+const cardDecorMonth = modalRight.querySelector('.js-card-decor-month');
+const cardDecorYear = modalRight.querySelector('.js-card-decor-year');
+const cardDecorCvc = modalRight.querySelector('.js-card-decor-cvc');
+
 backdrop.addEventListener('click', event => {
   const target = event.target;
-  if (target.classList.contains('backdrop') || target.closest('.icon-close')) {
+  if (
+    target.classList.contains('backdrop') ||
+    target.closest('.icon-close') ||
+    target.classList.contains('js-button-no-pay')
+  ) {
     backdrop.classList.remove('is-open');
+    Notify.info(`ZHADINA`);
   }
+});
+
+formPay.addEventListener('input', event => {
+  cardDecorNumber.textContent = numberCardInput.value;
+  cardDecorMonth.textContent = expyresMonthInput.value;
+  cardDecorYear.textContent = creditExpyresYearInput.value;
+  cardDecorCvc.textContent = cardCvcInput.value;
+});
+
+formPay.addEventListener('submit', event => {
+  event.preventDefault();
+  Notify.success(`Thank you very much, payment is confirmed.`);
+  backdrop.remove();
 });

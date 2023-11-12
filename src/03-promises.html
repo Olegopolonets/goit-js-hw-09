@@ -64,40 +64,39 @@
               <div class="mastercard-img"></div>
               <div class="card-text-top">
                 <p class="card-number">CARD NUMBER</p>
-                <span class="card__span">0000 0000 0000 0000</span>
+                <span class="card__span js-card-decor-number">0000 0000 0000 0000</span>
               </div>
 
               <div class="card-text-bottom">
                 <div class="expiration">
                   <p class="card-number">EXPIRATION</p>
                   <span class="card__exp-month">
-                    <span class="card__span"> 00 </span>
+                    <span class="card__span js-card-decor-month"> 00 </span>
                   </span>
                   <span class="e-divider">
                     <span> / </span>
                   </span>
                   <span class="card__exp-year">
-                    <span class="card__span"> 00 </span>
+                    <span class="card__span js-card-decor-year"> 00 </span>
                   </span>
                 </div>
                 <div class="cvc">
                   <p class="card-number">CVC</p>
                   <span class="card__cvc">
-                    <span class="card__span">000</span>
+                    <span class="card__span js-card-decor-cvc">000</span>
                   </span>
                 </div>
               </div>
             </div>
 
-            <form class="form-d">
+            <form class="form-details js-form-pay">
               <input
                 class="field"
                 name="person-number"
                 id="person-number"
-                type="number"
+                type="tel"
                 pattern="[0-9\s]{13,19}"
-                min="0"
-                max="16"
+                maxlength="16"
                 autocomplete="off"
                 placeholder="1234 5678 9123 4567"
                 required
@@ -106,33 +105,38 @@
                 <input
                   class="field"
                   id="expyres-month"
-                  type="number"
+                  type="tel"
                   name="expyres-month"
                   placeholder="MM"
-                  pattern="[0-9\s]{13,19}"
                   maxlength="2"
+                  pattern="[0-9]*"
                 />
                 <input
                   class="field"
                   id="input-credit-expyres-year"
-                  type="number"
+                  type="tel"
                   name="expyres-year"
                   placeholder="YY"
-                  pattern="[0-9\s]{13,19}"
                   maxlength="2"
+                  pattern="[0-9]*"
                 />
                 <input
                   class="field"
                   id="card-cvc"
-                  type="number"
+                  type="tel"
                   name="cardcvc"
                   placeholder="123"
-                  maxlength="3"
                   autocomplete="off"
-                  pattern="[0-9\s]{13,19}"
+                  maxlength="3"
+                  pattern="[0-9]*"
                 />
               </div>
-              <button class="button-credit" type="submit">Submit</button>
+              <div class="butoon-wrapper-pay">
+                <button class="button-credit" type="submit">Of course</button>
+                <button class="button-credit js-button-no-pay" type="button">
+                  No money
+                </button>
+              </div>
             </form>
           </li>
         </ul>
