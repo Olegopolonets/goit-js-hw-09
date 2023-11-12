@@ -81,7 +81,6 @@ const options = {
 
 flatpickr(input, options);
 
-// конверт мілісекунд в елементи дати
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
@@ -115,13 +114,8 @@ function startTimer() {
   }, 1000);
 }
 
-// padStart()
 function addLeadingZero(value) {
   return value.toString().padStart(2, '0');
 }
 
 start.addEventListener('click', startTimer);
-// stopFireworks.addEventListener('click', () => {
-//   console.log('112');
-
-// });

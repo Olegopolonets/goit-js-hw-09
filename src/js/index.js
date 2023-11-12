@@ -5,7 +5,6 @@ for (let i = 0; i <= images.length - 1; i++) {
     for (let j = 0; j < images.length; j++) {
       images[j].classList.add('passiveimage');
     }
-    // це замикання?
     (function () {
       images[i].classList.remove('passiveimage');
     })();

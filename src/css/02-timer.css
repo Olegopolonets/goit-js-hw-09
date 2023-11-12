@@ -96,9 +96,3 @@ body {
   width: 50%;
   z-index: -1;
 }
-
-.stop-fireworks {
-  position: absolute;
-  top: 50px;
-  left: 10px;
-}
