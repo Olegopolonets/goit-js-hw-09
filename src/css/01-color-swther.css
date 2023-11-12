@@ -1,8 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 body {
   background-color: black;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.text-wrapper {
+  color: bisque;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 130px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .img-morfiys {
@@ -14,36 +32,34 @@ body {
   background-repeat: no-repeat;
 }
 
-.text-wrapper {
-  color: bisque;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-around;
+.palm-red,
+.palm-blue {
+  position: absolute;
+  opacity: 0;
 }
 
-.butoon-wrapper {
-  position: relative;
+.image-opacity {
+  opacity: 1;
 }
 
 .js-start {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 40px;
   left: 30%;
 }
 .js-close {
-  position: absolute;
-  bottom: 0;
-  right: 30%;
+  position: fixed;
+  bottom: 40px;
+  right: 28%;
 }
+
 button {
   cursor: pointer;
   border: none;
-  /* border: 2px solid red; */
-  /* outline: transparent; */
-  background-color: white;
+  background-color: transparent;
   padding: 80px;
-  /* width: 150px;
-  height: 150px; */
+  height: 190px;
+  width: 190px;
 }
 
 .red {
@@ -63,4 +79,9 @@ button {
 .back a {
   color: azure;
   text-decoration: none;
+  font-size: 20px;
+}
+
+.back a:hover {
+  color: wheat;
 }

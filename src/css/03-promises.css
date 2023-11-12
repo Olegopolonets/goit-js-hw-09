@@ -35,6 +35,17 @@ section {
   top: 10px;
   left: 15px;
 }
+
+.go-back a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.go-back a:hover {
+  color: wheat;
+}
+
 .form {
   width: 100%;
 }
