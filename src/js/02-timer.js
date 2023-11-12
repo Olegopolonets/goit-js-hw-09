@@ -94,7 +94,7 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-
+let timerInterval;
 function startTimer() {
   start.setAttribute('disabled', true);
   timerInterval = setInterval(() => {
