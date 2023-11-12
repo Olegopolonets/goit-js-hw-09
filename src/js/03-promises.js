@@ -66,7 +66,7 @@ randomBtn.addEventListener('click', () => {
   step.value = Math.floor(Math.random() * 10 + 1) * 100;
   amount.value = Math.floor(Math.random() * 10) + 1;
   countClickReset += 1;
-  if (countClickReset % 5 === 0) {
+  if (countClickReset % 4 === 0) {
     modalPay();
   }
 });
